@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de usuarios</title>
+</head>
+<body>
+    <h1>Usuarios registrados</h1>
+    <ul>
+        {% for user in users %}
+        <li>
+            {{ user[1] }} - {{ user[2] }}
+            <form action="/delete/{{ user[0] }}" method="POST" style="display:inline;">
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Registrar otro usuario</a>
+</body>
+</html>
